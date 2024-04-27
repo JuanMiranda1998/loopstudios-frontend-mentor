@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'alata';
+    src: url(./fonts/Alata/Alata-Regular.ttf),
+    format('truetype');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'josefin_sans';
+    src: url(./fonts/Josefin_Sans/JosefinSans-VariableFont_wght.ttf),
+    format('truetype');
+    font-weight: 300;
+}
