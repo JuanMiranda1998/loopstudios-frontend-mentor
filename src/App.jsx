@@ -62,8 +62,8 @@ function App() {
   }
 
   return (
-    <div className="w-full max-w-[100lvw] min-h-[100lvh] bg-white font-body relative">
-      <div className="hero py-10 px-6 md:py-10 md:px-16 bg-hero-mobile md:bg-hero-desktop bg-cover">
+    <div className="w-full max-w-[100lvw] min-h-[100lvh] bg-white font-body relative overflow-hidden">
+      <div className="hero py-10 px-6 md:px-24 bg-hero-mobile md:bg-hero-desktop bg-cover">
         <div className="navbar flex flex-row justify-between items-center">
           <div className="logo w-40">
             <img src="./src/images/logo.svg" alt="loopstudios logo" />
@@ -106,31 +106,38 @@ function App() {
             )}
           </div>
         </div>
-        <div className="my-44 px-8 py-8 border-2 border-white ">
-          <h1 className="text-[2.5rem] leading-10 text-left font-title uppercase text-white">
+        <div className="my-44 md:my-32 md:w-[600px] px-8 md:px-12 py-8 md:py-10 border-2 border-white ">
+          <h1 className="text-[2.5rem] md:text-6xl leading-10 md:tracking-wider text-left font-title uppercase text-white">
             Immersive experiences that deliver
           </h1>
         </div>
       </div>
-      <section className="px-6 py-[90px]">
-        <div>
+      <section className="px-6 py-[90px] relative lg:h-[600px] lg:mb-12 lg:mt-24">
+        <div className="flex flex-col justify-center items-center lg:absolute lg:top-0 lg:left-0 lg:translate-x-20 xl:translate-x-32">
           <img src="./src/images/mobile/image-interactive.jpg" alt="" />
         </div>
-        <h2 className="text-[2rem] leading-8 font-title uppercase text-center mt-12 mb-5">
-          The leader in interactive VR
-        </h2>
-        <p className="text-base font-body leading-6 text-center text-[#818181] px-4">
-          Founded in 2011, Loopstudios has been producing world-class virtual
-          reality projects for some of the best companies around the globe. Our
-          award-winning creations have transformed businesses through digital
-          experiences that bind to their brand.
-        </p>
+        <div className="text-center lg:absolute lg:top-[27%] lg:right-0 lg:-translate-x-[10%] xl:-translate-x-1/4 lg:w-[550px] xl:w-[650px] lg:px-20 lg:py-20 bg-white">
+          <h2 className="text-[2rem] lg:text-5xl leading-8 font-title uppercase lg:text-left mt-12 lg:mt-0 mb-5">
+            The leader in interactive VR
+          </h2>
+          <p className="text-base font-body leading-6 lg:text-left text-[#818181] px-4 lg:px-0">
+            Founded in 2011, Loopstudios has been producing world-class virtual
+            reality projects for some of the best companies around the globe. Our
+            award-winning creations have transformed businesses through digital
+            experiences that bind to their brand.
+          </p>
+        </div>
       </section>
-      <section className="flex flex-col justify-center">
-        <h2 className="text-[2rem] leading-8 font-title uppercase text-center mb-5">
-          Our creations
-        </h2>
-        <div className="flex flex-col gap-6 mt-12 px-6">
+      <section className="flex flex-col justify-center px-6 md:px-24 md:mb-44">
+        <div className="flex flex-row justify-center md:justify-between items-center">
+          <h2 className="text-[2rem] md:text-5xl leading-8 font-title uppercase md:text-left text-center">
+            Our creations
+          </h2>
+          <button className="hidden md:block px-16 pt-4 pb-3 text-xl font-semibold tracking-wider font-title uppercase border border-black mb-2">
+            See all
+          </button>
+        </div>
+        <div className="flex flex-col gap-6 mt-12 md:grid md:grid-cols-2 lg:grid-cols-4 md:px-0">
           {PROJECTS.map((project) => (
             <ProjectCard
               key={project.id}
@@ -140,39 +147,42 @@ function App() {
             />
           ))}
         </div>
-        <div className="flex justify-center items-center mt-10 mb-12">
+        <div className="flex md:hidden justify-center items-center mt-10 mb-12">
           <button className="px-12 pt-3 pb-2 font-semibold tracking-wider font-title uppercase border border-black">
             See all
           </button>
         </div>
       </section>
-
-      <footer className="flex flex-col justify-center items-center bg-black text-white">
-        <div className="logo w-32 mt-12 mb-10">
-          <img src="./src/images/logo.svg" alt="loopstudios logo" />
+      <footer className="flex flex-col md:flex-row justify-center md:justify-between items-center bg-black text-white md:px-24 md:pt-10 md:pb-12">
+        <div>
+          <div className="logo w-32 mt-12 md:mt-0 mb-10 md:mb-8">
+            <img src="./src/images/logo.svg" alt="loopstudios logo" />
+          </div>
+          <ul className="text-center flex flex-col md:flex-row items-center justify-center gap-4 mb-6 md:mb-0">
+            {NAVLINKS.map((link, index) => (
+              <Navlink key={index} name={link} />
+            ))}
+          </ul>
         </div>
-        <ul className="text-center flex flex-col items-center justify-center gap-4 mb-6">
-          {NAVLINKS.map((link, index) => (
-            <Navlink key={index} name={link} />
-          ))}
-        </ul>
-        <div className="flex flex-row justify-evenly items-center gap-6 my-4">
-          <a href="#">
-            <img src="./src/images/icon-facebook.svg" alt="" />
-          </a>
-          <a href="#">
-            <img src="./src/images/icon-twitter.svg" alt="" />
-          </a>
-          <a href="#">
-            <img src="./src/images/icon-pinterest.svg" alt="" />
-          </a>
-          <a href="#">
-            <img src="./src/images/icon-instagram.svg" alt="" />
-          </a>
+        <div>
+          <div className="flex flex-row justify-evenly md:justify-end items-center gap-6 md:gap-4 my-4 md:my-0">
+            <a href="#">
+              <img src="./src/images/icon-facebook.svg" alt="" />
+            </a>
+            <a href="#">
+              <img src="./src/images/icon-twitter.svg" alt="" />
+            </a>
+            <a href="#">
+              <img src="./src/images/icon-pinterest.svg" alt="" />
+            </a>
+            <a href="#">
+              <img src="./src/images/icon-instagram.svg" alt="" />
+            </a>
+          </div>
+          <p className="my-10 md:mt-6 md:mb-0 text-sm text-[#818181]">
+            © 2021 Loopstudios. All rights reserved.
+          </p>
         </div>
-        <p className="my-10 text-sm text-[#818181]">
-          © 2021 Loopstudios. All rights reserved.
-        </p>
       </footer>
     </div>
   );
