@@ -1,11 +1,11 @@
+import { useState } from "react";
 import "./App.css";
 import Navlink from "./components/Navlink";
 import ProjectCard from "./components/ProjectCard";
 
 function App() {
-
+  const [menuOpen, setMenuOpen] = useState(false)
   const NAVLINKS = ['About','Careers','Events','Products','Support'];
-
   const PROJECTS = [
     {
       id: 1,
@@ -57,20 +57,53 @@ function App() {
     },
   ];
 
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen)
+  }
+
   return (
-    <div className="w-full max-w-[100lvw] min-h-[100lvh] bg-white font-body">
+    <div className="w-full max-w-[100lvw] min-h-[100lvh] bg-white font-body relative">
       <div className="hero py-10 px-6 md:py-10 md:px-16 bg-hero-mobile md:bg-hero-desktop bg-cover">
         <div className="navbar flex flex-row justify-between items-center">
           <div className="logo w-40">
             <img src="./src/images/logo.svg" alt="loopstudios logo" />
           </div>
-          <ul className="hidden md:flex flex-row gap-6">
+          <ul className="hidden sm:flex flex-row gap-6">
             {NAVLINKS.map((link, index) => (
               <Navlink key={index} name={link} />
             ))}
           </ul>
-          <div className="flex items-center mb-1 md:hidden">
-            <img src="./src/images/icon-hamburger.svg" alt="" />
+          <div className="block sm:hidden">
+            {menuOpen ? (
+              <div className="px-6 py-10 bg-black text-white absolute top-0 left-0 bottom-0 right-0">
+                <div className="flex flex-row justify-between items-start">
+                  <div className="logo w-40">
+                    <img src="./src/images/logo.svg" alt="loopstudios logo" />
+                  </div>
+                  <button
+                    onClick={toggleMenu}
+                    className="flex items-center mb-1 md:hidden"
+                  >
+                    <img className="w-5" src="./src/images/icon-close.svg" alt="" />
+                  </button>
+                </div>
+                <div className="mt-24">
+                  <ul className="flex flex-col gap-6 uppercase font-title text-xl" >
+                    {NAVLINKS.map((link, index) => (
+                      <Navlink key={index} name={link} />
+                    ))}
+                  </ul>
+                </div>
+            
+              </div>
+            ) : (
+              <button
+                onClick={toggleMenu}
+                className="flex items-center mb-1 md:hidden"
+              >
+                <img src="./src/images/icon-hamburger.svg" alt="" />
+              </button>
+            )}
           </div>
         </div>
         <div className="my-44 px-8 py-8 border-2 border-white ">
