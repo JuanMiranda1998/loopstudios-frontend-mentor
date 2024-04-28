@@ -2,10 +2,12 @@ import { useState } from "react";
 import "./App.css";
 import Navlink from "./components/Navlink";
 import ProjectCard from "./components/ProjectCard";
+import SocialLink from "./components/SocialLink";
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false)
   const NAVLINKS = ['About','Careers','Events','Products','Support'];
+  const SOCIAL_LINKS = ["./src/images/icon-facebook.svg","./src/images/icon-twitter.svg","./src/images/icon-pinterest.svg","./src/images/icon-instagram.svg"]
   const PROJECTS = [
     {
       id: 1,
@@ -62,7 +64,7 @@ function App() {
   }
 
   return (
-    <div className="w-full max-w-[100lvw] min-h-[100lvh] bg-white font-body relative overflow-hidden">
+    <div className={`w-full max-w-[100lvw] min-h-[100lvh] ${menuOpen?'h-[100lvh]':''} bg-white font-body relative overflow-hidden`}>
       <div className="hero py-10 px-6 md:px-24 bg-hero-mobile md:bg-hero-desktop bg-cover">
         <div className="navbar flex flex-row justify-between items-center">
           <div className="logo w-40">
@@ -94,7 +96,6 @@ function App() {
                     ))}
                   </ul>
                 </div>
-            
               </div>
             ) : (
               <button
@@ -165,19 +166,10 @@ function App() {
           </ul>
         </div>
         <div>
-          <div className="flex flex-row justify-evenly md:justify-end items-center gap-6 md:gap-4 my-4 md:my-0">
-            <a className="bg-gradient-to-r from-white to-white bg-[length:0px_6px] hover:bg-[length:100%_6px] bg-[position:50%_110%] bg-no-repeat transition-[background-size] duration-500 pb-3" href="#">
-              <img src="./src/images/icon-facebook.svg" alt="" />
-            </a>
-            <a className="bg-gradient-to-r from-white to-white bg-[length:0px_6px] hover:bg-[length:100%_6px] bg-[position:50%_110%] bg-no-repeat transition-[background-size] duration-500 pb-3" href="#">
-              <img src="./src/images/icon-twitter.svg" alt="" />
-            </a>
-            <a className="bg-gradient-to-r from-white to-white bg-[length:0px_6px] hover:bg-[length:100%_6px] bg-[position:50%_110%] bg-no-repeat transition-[background-size] duration-500 pb-3" href="#">
-              <img src="./src/images/icon-pinterest.svg" alt="" />
-            </a>
-            <a className="bg-gradient-to-r from-white to-white bg-[length:0px_6px] hover:bg-[length:100%_6px] bg-[position:50%_110%] bg-no-repeat transition-[background-size] duration-500 pb-3" href="#">
-              <img src="./src/images/icon-instagram.svg" alt="" />
-            </a>
+          <div className="flex flex-row justify-center md:justify-end items-center gap-6 md:gap-4 my-4 md:my-0">
+              {SOCIAL_LINKS.map((link, index) => (
+                <SocialLink key={index} iconUrl={link} />
+              ))}
           </div>
           <p className="my-10 md:mt-6 md:mb-0 text-sm text-[#818181]">
             © 2021 Loopstudios. All rights reserved.
