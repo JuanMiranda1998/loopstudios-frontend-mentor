@@ -23,6 +23,7 @@ Users should be able to:
 
 ### Screenshot
 
+![Desktop(1440px)](./capture/capture-desktop.png)
 ![Mobile(375px)](./capture/capture-mobile.png)
 
 

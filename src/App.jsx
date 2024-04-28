@@ -133,11 +133,11 @@ function App() {
           <h2 className="text-[2rem] md:text-5xl leading-8 font-title uppercase md:text-left text-center">
             Our creations
           </h2>
-          <button className="hidden md:block px-16 pt-4 pb-3 text-xl font-semibold tracking-wider font-title uppercase border border-black mb-2">
+          <button className="hidden md:block px-16 pt-4 pb-3 text-xl font-semibold tracking-wider font-title uppercase border border-black mb-2 hover:bg-black hover:text-white transition-all ease-in duration-200">
             See all
           </button>
         </div>
-        <div className="flex flex-col gap-6 mt-12 md:grid md:grid-cols-2 lg:grid-cols-4 md:px-0">
+        <div className="flex flex-col gap-6 mt-12 md:grid md:grid-cols-3 lg:grid-cols-4 md:px-0">
           {PROJECTS.map((project) => (
             <ProjectCard
               key={project.id}
@@ -148,7 +148,7 @@ function App() {
           ))}
         </div>
         <div className="flex md:hidden justify-center items-center mt-10 mb-12">
-          <button className="px-12 pt-3 pb-2 font-semibold tracking-wider font-title uppercase border border-black">
+          <button className="px-12 pt-3 pb-2 font-semibold tracking-wider font-title uppercase border border-black hover:bg-black hover:text-white transition-all ease-in duration-200">
             See all
           </button>
         </div>
@@ -166,16 +166,16 @@ function App() {
         </div>
         <div>
           <div className="flex flex-row justify-evenly md:justify-end items-center gap-6 md:gap-4 my-4 md:my-0">
-            <a href="#">
+            <a className="bg-gradient-to-r from-white to-white bg-[length:0px_6px] hover:bg-[length:100%_6px] bg-[position:50%_110%] bg-no-repeat transition-[background-size] duration-500 pb-3" href="#">
               <img src="./src/images/icon-facebook.svg" alt="" />
             </a>
-            <a href="#">
+            <a className="bg-gradient-to-r from-white to-white bg-[length:0px_6px] hover:bg-[length:100%_6px] bg-[position:50%_110%] bg-no-repeat transition-[background-size] duration-500 pb-3" href="#">
               <img src="./src/images/icon-twitter.svg" alt="" />
             </a>
-            <a href="#">
+            <a className="bg-gradient-to-r from-white to-white bg-[length:0px_6px] hover:bg-[length:100%_6px] bg-[position:50%_110%] bg-no-repeat transition-[background-size] duration-500 pb-3" href="#">
               <img src="./src/images/icon-pinterest.svg" alt="" />
             </a>
-            <a href="#">
+            <a className="bg-gradient-to-r from-white to-white bg-[length:0px_6px] hover:bg-[length:100%_6px] bg-[position:50%_110%] bg-no-repeat transition-[background-size] duration-500 pb-3" href="#">
               <img src="./src/images/icon-instagram.svg" alt="" />
             </a>
           </div>
