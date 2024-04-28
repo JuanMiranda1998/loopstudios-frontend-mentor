@@ -30,6 +30,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Github](https://github.com/JuanMiranda1998/loopstudios-frontend-mentor)
+- Solution URL: [Netlify](https://loopstudios-landing-page-juanmiranda.netlify.app/)
 
 
 ### Built with
