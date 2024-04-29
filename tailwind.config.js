@@ -4,8 +4,8 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        'hero-desktop': "url('/images/desktop/image-hero.jpg')",
-        'hero-mobile': "url('/images/mobile/image-hero.jpg')",
+        'hero-desktop': "linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ) ,url('/images/desktop/image-hero.jpg')",
+        'hero-mobile': "linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('/images/mobile/image-hero.jpg')",
       }
     },
     fontFamily: {
