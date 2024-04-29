@@ -67,7 +67,7 @@ function App() {
     <div className={`w-full max-w-[100lvw] min-h-[100lvh] ${menuOpen?'h-[100lvh]':''} bg-white font-body relative overflow-hidden`}>
       <div className="hero py-10 px-6 md:px-32 md:py-14 bg-hero-mobile md:bg-hero-desktop bg-cover relative">
         <div className="navbar flex flex-row justify-between items-center">
-          <div className="logo w-52">
+          <div className="logo w-40 md:52">
             <img className="w-full" src="/images/logo.svg" alt="loopstudios logo" />
           </div>
           <ul className="hidden sm:flex flex-row gap-6">
