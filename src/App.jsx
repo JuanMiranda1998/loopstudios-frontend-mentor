@@ -64,11 +64,19 @@ function App() {
   }
 
   return (
-    <div className={`w-full max-w-[100lvw] min-h-[100lvh] ${menuOpen?'h-[100lvh]':''} bg-white font-body relative overflow-hidden`}>
+    <div
+      className={`w-full max-w-[100lvw] min-h-[100lvh] ${
+        menuOpen ? "h-[100lvh]" : ""
+      } bg-white font-body relative overflow-hidden`}
+    >
       <div className="hero py-10 px-6 md:px-32 md:py-16 bg-hero-mobile md:bg-hero-desktop bg-cover relative">
         <div className="navbar flex flex-row justify-between items-center">
           <div className="logo w-40 md:w-56">
-            <img className="w-full" src="/images/logo.svg" alt="loopstudios logo" />
+            <img
+              className="w-full"
+              src="/images/logo.svg"
+              alt="loopstudios logo"
+            />
           </div>
           <ul className="hidden sm:flex flex-row gap-6">
             {NAVLINKS.map((link, index) => (
@@ -90,7 +98,7 @@ function App() {
                   </button>
                 </div>
                 <div className="mt-24">
-                  <ul className="flex flex-col gap-6 uppercase font-title text-xl" >
+                  <ul className="flex flex-col gap-6 uppercase font-title text-xl">
                     {NAVLINKS.map((link, index) => (
                       <Navlink key={index} name={link} />
                     ))}
@@ -123,9 +131,9 @@ function App() {
           </h2>
           <p className="text-base font-body leading-6 lg:text-left text-[#818181] px-4 lg:px-0">
             Founded in 2011, Loopstudios has been producing world-class virtual
-            reality projects for some of the best companies around the globe. Our
-            award-winning creations have transformed businesses through digital
-            experiences that bind to their brand.
+            reality projects for some of the best companies around the globe.
+            Our award-winning creations have transformed businesses through
+            digital experiences that bind to their brand.
           </p>
         </div>
       </section>
@@ -167,15 +175,22 @@ function App() {
         </div>
         <div>
           <div className="flex flex-row justify-center md:justify-end items-center gap-6 md:gap-4 my-4 md:my-0">
-              {SOCIAL_LINKS.map((link, index) => (
-                <SocialLink key={index} iconUrl={link} />
-              ))}
+            {SOCIAL_LINKS.map((link, index) => (
+              <SocialLink key={index} iconUrl={link} />
+            ))}
           </div>
           <p className="my-10 md:mt-6 md:mb-0 text-sm text-[#818181]">
             © 2021 Loopstudios. All rights reserved.
           </p>
         </div>
       </footer>
+      <div className="bg-black text-white text-center text-sm">
+        Challenge by{" "}
+        <a className="text-[#3e52a3]" href="https://www.frontendmentor.io?ref=challenge" target="_blank">
+          Frontend Mentor
+        </a>
+        . Coded by <a className="text-[#3e52a3]" href="#">Juan Miranda</a>.
+      </div>
     </div>
   );
 }
